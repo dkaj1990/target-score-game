@@ -43,6 +43,7 @@ $(document).ready(function(){
 
 function setUpGame(){
     $("#target-score").text(targetScore);
+    $("#user-score").text(userScore);
     beaches.forEach(function(beach) {
         beach.beachScore = Math.floor(Math.random() * 11 + 1);
         console.log(`${beach.name}: ${beach.beachScore}` );
