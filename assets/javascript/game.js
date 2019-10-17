@@ -65,6 +65,8 @@ function resetGame(){
     userScore = 0;
     $("#target-score").text(targetScore);
     $("#user-score").text(userScore);
+    $(".reset-button").attr("style", "visibility:hidden");
+    $(".alert-success").attr("style", "visibility:hidden");
     
 }
 
