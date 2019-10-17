@@ -1,4 +1,4 @@
-const targetScore = Math.floor(Math.random() * (120-19) + 19);
+let targetScore = Math.floor(Math.random() * (120-19) + 19);
 let userScore = 0; 
 const beaches = [
     {
@@ -32,12 +32,20 @@ $(document).ready(function(){
         if(userScore === targetScore){
             console.log(`Awesome!! You did it!`);
             $(".alert-success").attr("style", "visibility:visible");
+            $(".reset-button").attr("style", "visibility:visible");
         }else if(userScore > targetScore){
             console.log('You lose');
             $(".alert-danger").attr("style", "visibility:visible");
+            $(".reset-button").attr("style", "visibility:visible");
         }
     });
 
+    $(document).ready(function(){
+    //Reset the game if reset button is pressed 
+    $(".reset-button").click(function(){
+        resetGame();
+    });
+});
 
 });
 
@@ -50,6 +58,13 @@ function setUpGame(){
         $(`#${beach.name}`).attr("data-beachvalue", beach.beachScore);
         
     });
+}
 
+function resetGame(){
+    targetScore= Math.floor(Math.random() * (120-19) + 19);
+    userScore = 0;
+    $("#target-score").text(targetScore);
+    $("#user-score").text(userScore);
+    
 }
 
