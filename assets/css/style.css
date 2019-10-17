@@ -1,3 +1,11 @@
+
+body{
+    background-image: url("../images/sparkling\ blue.jpg");
+    
+}
+p{
+    text-align: center;
+}
 .beach-image{
     height: 300px;
 }
